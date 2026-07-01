@@ -29,7 +29,17 @@ app.use(
   }),
 );
 
-app.use(cors());
+app.use(
+  cors({
+    origin: [
+      "https://lensflow-backend-rfyo.onrender.com",
+      "http://localhost:3000",
+      "http://localhost:5173",
+      process.env.FRONTEND_URL || "",
+    ].filter(Boolean),
+    credentials: true,
+  }),
+);
 
 app.use("/api/stripe/webhook", express.raw({ type: "application/json" }), stripeWebhookRouter);
 
