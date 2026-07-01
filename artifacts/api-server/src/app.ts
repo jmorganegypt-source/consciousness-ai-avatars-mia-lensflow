@@ -32,7 +32,7 @@ app.use(
 app.use(
   cors({
     origin: [
-      "https://lensflow-backend-rfyo.onrender.com",
+        "https://lensflow-backend-rfyc.onrender.com",
       "http://localhost:3000",
       "http://localhost:5173",
       process.env.FRONTEND_URL || "",
